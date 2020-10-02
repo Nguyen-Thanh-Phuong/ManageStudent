@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="205dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="5dp"
+    android:id="@+id/phone_Cardview"
+    app:cardElevation="6dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/background_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/card2"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/phone_image"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:src="@drawable/johnwick1" />
+
+        <TextView
+            android:fontFamily="@font/playfair_display"
+            android:id="@+id/phone_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Samsung"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
