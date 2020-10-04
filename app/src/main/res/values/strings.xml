@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ManageStudent</string>
+    <string name="nav_info">Thông tin cá nhân</string>
 </resources>

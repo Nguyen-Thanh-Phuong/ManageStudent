@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:padding="@dimen/navigation_padding"
+    android:orientation="vertical"
+    android:background="#FEEAE6"
+    >
+    <ImageView
+        android:id="@+id/nav_imgView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/navigation_imageView_height"
+        android:src="@mipmap/ic_navigation_round" />
+    <TextView
+        style="@style/nav_textView"
+        android:id="@+id/nav_textView_name"
+        android:text="@string/app_name"/>
+
+</LinearLayout>
