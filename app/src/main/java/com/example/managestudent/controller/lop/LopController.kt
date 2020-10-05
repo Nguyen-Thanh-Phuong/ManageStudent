@@ -36,15 +36,14 @@ class LopController {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
+                list.clear()
                 if(p0.exists())
                 {
                     for(data in p0.children)
                     {
                         val value = data.getValue(Lop::class.java)
-                        if(value!=null){
+                        if(value!=null)
                             list.add(value)
-                            Log.d("MAINN",value.TenLop)
-                        }
 
 
                     }
