@@ -45,8 +45,6 @@ class LopController {
                             list.add(value)
                             Log.d("MAINN",value.TenLop)
                         }
-
-
                     }
                     lopInterface?.getListLop(list)
                 }
