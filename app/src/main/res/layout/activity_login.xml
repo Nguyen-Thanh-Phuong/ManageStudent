@@ -94,9 +94,10 @@
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.763"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.504" />
 
     <TextView
         android:id="@+id/textView2"
@@ -187,6 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ForgotPassword?"
+        android:visibility="invisible"
         android:textColor="@android:color/background_light"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -194,7 +196,10 @@
         app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toEndOf="@+id/btnLogin_convertForm"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintVertical_bias="0.370"
+
+
+        />
 
     <EditText
         android:id="@+id/txtConfirmPass"
@@ -212,6 +217,50 @@
         app:layout_constraintStart_toEndOf="@+id/btnSignUp_loginForm"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintVertical_bias="0.075"
-        android:visibility="invisible" />
+
+       />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:paddingLeft="5dp"
+        android:text="type"
+        android:visibility="invisible"
+        android:textColor="@android:color/background_light"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toEndOf="@+id/btnLogin_convertForm"
+        app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <RadioGroup
+
+        android:id="@+id/RGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:visibility="invisible"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/type"
+        app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass"
+        >
+        <RadioButton
+            android:id="@+id/Abdominal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="User" />
+        <RadioButton
+            android:id="@+id/Arm"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Admin" />
+    </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

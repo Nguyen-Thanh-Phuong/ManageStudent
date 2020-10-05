@@ -50,6 +50,7 @@ class AccountController {
     {
         return (list.find { it-> it.username== username} !=null)
     }
+
     fun insert(account: Account)
     {
         if(checkUser(account.username))
@@ -57,6 +58,7 @@ class AccountController {
             Toast.makeText(context,"User ${account.username} is Already",Toast.LENGTH_SHORT).show();
             return
         }
+
         val firebase = getFirebaseInstance()
         val keyId = firebase.push().key
         if(keyId!=null)
@@ -68,9 +70,9 @@ class AccountController {
         }
     }
 
-    fun checkInvalidAccount(account: Account):String
+    fun checkInvalidAccount(account: Account):Int
     {
-        return list.find { it -> (it.username==account.username&& it.password==account.password)}?.key
-            ?: ""
+        return list.find { it -> (it.username==account.username&& it.password==account.password)}?.type
+            ?:3
     }
 }
