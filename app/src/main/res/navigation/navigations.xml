@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@+id/nav_home"
+    android:id="@+id/navigations">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.managestudent.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="com.example.managestudent.InfoFragment"
+        android:label="@string/nav_info"
+        tools:layout="@layout/fragment_info"/>
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.managestudent.SettingFragment"
+        android:label="@string/nav_setting"
+        tools:layout="@layout/fragment_setting"/>
+    <fragment
+        android:id="@+id/nav_exit"
+        android:name="com.example.managestudent.LogoutFragment"
+        android:label="@string/nav_exit"
+        tools:layout="@layout/fragment_logout"/>
+</navigation>

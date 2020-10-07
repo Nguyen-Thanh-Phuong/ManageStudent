@@ -2,16 +2,20 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/toolbar"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
     android:background="#fff">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
         <ImageView
+            android:id="@+id/nav_toolbar"
             android:layout_marginTop="20dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:onClick="showNavigater"
             android:src="@drawable/menu_icon"/>
         <androidx.cardview.widget.CardView
             android:layout_width="60dp"

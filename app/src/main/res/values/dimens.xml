@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="navigation_padding">16dp</dimen>
-    <dimen name="navigation_imageView_height">150dp</dimen>
-    <dimen name="nav_textView">16dp</dimen>
+    <dimen name="navigation_imageView_height">100dp</dimen>
+    <dimen name="navigation_imageView_width">100dp</dimen>
+    <dimen name="nav_header_textView_marginTop">10dp</dimen>
     <dimen name="nav_header_height">250dp</dimen>
 </resources>

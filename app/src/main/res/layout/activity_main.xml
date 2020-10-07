@@ -6,10 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:id="@+id/drawerLayout"
     tools:openDrawer="start"
     tools:context=".MainActivity">
+
     <include
-        layout="@layout/activity_menu"/>
-    <include
-        layout="@layout/activity_navigation_drawer"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/app_bar_main"/>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_nav"
+        app:headerLayout="@layout/navigation_header"
+
+        >
+
+
+    </com.google.android.material.navigation.NavigationView>
+<!--    <include-->
+<!--        layout="@layout/activity_menu"/>-->
+
+<!--    <include-->
+<!--        layout="@layout/activity_navigation_drawer"/>-->
 </androidx.drawerlayout.widget.DrawerLayout>
