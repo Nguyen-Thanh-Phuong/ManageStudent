@@ -1,6 +1,7 @@
 package com.example.managestudent.controller.khoa
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import com.example.managestudent.model.Khoa
 import com.google.firebase.database.*
@@ -10,35 +11,27 @@ class KhoaController {
     var context: Context? =null
     var khoaInterface: KhoaInterface?=null
     val khoaList = mutableListOf<Khoa>()
-    private constructor(){}
+    private var khoaCode = mutableListOf<String>()
+    private var khoaName = mutableListOf<String>()
+    var instanceFirebase = FirebaseDatabase.getInstance().getReference("Khoa")
+    private constructor(){getAllKhoa()}
     companion object
     {
-        var instances: KhoaController =
-            KhoaController()
+        var instances: KhoaController = KhoaController()
         fun getInstance(context: Context): KhoaController {
-            if(instances ==null)
-                instances =
-                    KhoaController()
             instances.context =context
             return instances
         }
         fun getInstance(context: Context,khoaInterface: KhoaInterface): KhoaController {
-            if(instances ==null)
-                instances =
-                    KhoaController()
-            instances.context =context
-            instances.khoaInterface = khoaInterface
+            getInstance(context).khoaInterface = khoaInterface
             return instances
         }
     }
 
 
-    private fun getFirebase(): DatabaseReference {
-        return FirebaseDatabase.getInstance().getReference("Khoa")
-    }
     fun getAllKhoa()
     {
-        var res = getFirebase()
+        var res = instanceFirebase
         var valueEventListener = object : ValueEventListener
         {
             override fun onCancelled(p0: DatabaseError) {
@@ -46,15 +39,19 @@ class KhoaController {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
+                khoaCode.clear()
+                khoaName.clear()
                 khoaList.clear()
                 if(p0.exists())
                 {
                     for (h in p0.children)
                     {
                         val khoa = h.getValue(Khoa::class.java)
-                        if (khoa != null) {
-
+                        if (khoa != null)
+                        {
                             khoaList.add(khoa)
+                            khoaCode.add(khoa.maKhoa)
+                            khoaName.add(khoa.tenKhoa)
                         }
                     }
                     khoaInterface?.getListKhoa(khoaList)
@@ -63,9 +60,19 @@ class KhoaController {
         }
         res.addValueEventListener(valueEventListener)
     }
+
+    fun getPos(maKhoa: String):Int
+    {
+        return try {
+            khoaCode.indexOf(maKhoa)
+        }catch (e:Exception)
+        {
+            return 0;
+        }
+    }
     fun getKhoa(map:Map<String,String>)
     {
-        val database = getFirebase()
+        val database = instanceFirebase
         var query: Query? =null
         for(data in map)
         {
@@ -107,6 +114,9 @@ class KhoaController {
         {
             return null
         }
+    }
+    fun getKhoaName(maKhoa: String): String {
+        return khoaName[khoaCode.indexOf(maKhoa)]
     }
     fun getKhoaByIndex(index:Int):Khoa?
     {

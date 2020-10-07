@@ -14,20 +14,26 @@
         android:layout_height="90dp"
         android:scaleType="fitXY"
         android:src="@drawable/johnwick2" />
-    <EditText
-        android:id="@+id/edtName"
+    <Spinner
+        android:id="@+id/spinnerSV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/calendar_textview"
-        android:hint="Input Text"
+        android:spinnerMode="dropdown"
+        android:background="@android:drawable/btn_dropdown"
         />
+    <Spinner
+        android:id="@+id/spinnerLop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
     <Spinner
         android:id="@+id/spinnerKhoa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        />
+        android:spinnerMode="dropdown" />
+
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"

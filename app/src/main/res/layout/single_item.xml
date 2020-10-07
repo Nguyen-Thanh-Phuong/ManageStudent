@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+    <LinearLayout
+        android:id="@+id/monhocItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/btn_selector_1"
+        android:focusable="true">
+        <TextView
+            android:id="@+id/monhocTxv"
+            android:drawableLeft="@drawable/ic_lens"
+            android:drawablePadding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="Text Text"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

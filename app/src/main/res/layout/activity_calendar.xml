@@ -92,65 +92,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_above="@id/weekLinear"/>
-    <LinearLayout
-        android:id="@+id/weekLinear"
-        android:layout_above="@id/infoWeek"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="6"
-        android:background="#4DC591"
-        android:layout_margin="20dp"
-        >
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_selector"
-            android:text="Mon"
-            android:textAllCaps="false"
-            android:clickable="true"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_selector"
-            android:text="Tue"
-            android:textAllCaps="false"
-            android:clickable="true"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_selector"
-            android:text="Wed"
-            android:textAllCaps="false"
-            android:clickable="true"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_selector"
-            android:text="Thu"
-            android:textAllCaps="false"
-            android:clickable="true"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_selector"
-            android:text="Fri"
-            android:textAllCaps="false"
-            android:clickable="true"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_selector"
-            android:text="Sat"
-            android:textAllCaps="false"
-            android:clickable="true"/>
-    </LinearLayout>
+    <include android:id="@+id/weekLinear" layout="@layout/week"/>
     <RelativeLayout
         android:layout_alignParentBottom="true"
         android:id="@+id/infoWeek"

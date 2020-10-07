@@ -11,18 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".menu.CalendarActivity"></activity>
-        <activity android:name=".TestActivity">
+        <activity android:name=".View.DKiMonHocActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".View.BuoiHocActivity">
+
+        </activity>
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menu.MenuActivity">
-
-        </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".View.CTBHActivity" />
+        <activity android:name=".View.DayOfWeekActivity" />
+        <activity android:name=".View.NhomActivity" />
+        <activity android:name=".View.GiangVienActivity" />
+        <activity android:name=".View.InputMonHoc" />
+        <activity android:name=".menu.CalendarActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".menu.MenuActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
