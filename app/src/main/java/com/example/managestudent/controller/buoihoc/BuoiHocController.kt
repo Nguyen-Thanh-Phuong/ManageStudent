@@ -31,6 +31,7 @@ class BuoiHocController {
             return instances
         }
     }
+
     private fun initBuoiHoc()
     {
         val firebase = getFirebaseInstance()
@@ -44,6 +45,7 @@ class BuoiHocController {
                 listNhomCode.clear()
                 listDayCode.clear()
                 list.clear()
+
                 if(p0.exists())
                 {
                     for(data in p0.children)
@@ -56,10 +58,35 @@ class BuoiHocController {
                             list.add(value)
                         }
                     }
+
                     BuoiHocInterface?.getListBuoiHoc(list)
                 }
             }
         })
+    }
+    fun getListQueryAddBuoiHocByDay(dayCode:String): List<BuoiHoc> {
+        return list.filter {
+            it.maDay ==dayCode
+        }
+    }
+
+    enum class StateTime
+    {
+        ONE_TO_FOUR,
+        FIVE_TO_EIGHT,
+        NINE_TO_THIRTEEN,
+        OTHER
+    }
+    fun checkIndexTimeTiet(buoiHoc: BuoiHoc): Int {
+        val tietStart = buoiHoc.tietStart.toInt()
+        val tietEnd = buoiHoc.tietEnd.toInt()
+        if(tietStart>=1 && tietEnd<=4)
+            return 0
+        else if(tietStart>=5 && tietEnd<=8)
+            return 1
+        else if(tietStart>=9 && tietEnd<=13)
+            return 2
+        else return 3
     }
     fun getPos(maNhom:String,maday:String): Int {
         return list.indexOf(list.find { it.maNhom== maNhom&& it.maDay == maday})

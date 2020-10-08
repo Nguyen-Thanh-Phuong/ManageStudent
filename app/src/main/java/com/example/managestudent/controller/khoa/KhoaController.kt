@@ -56,6 +56,7 @@ class KhoaController {
                     }
                     khoaInterface?.getListKhoa(khoaList)
                 }
+
             }
         }
         res.addValueEventListener(valueEventListener)

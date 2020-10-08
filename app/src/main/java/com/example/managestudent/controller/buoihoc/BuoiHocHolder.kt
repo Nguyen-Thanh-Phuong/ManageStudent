@@ -1,7 +1,9 @@
 package com.example.managestudent.controller.buoihoc
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.managestudent.R
 import com.example.managestudent.controller.day_of_week.DayOfWeekController
@@ -17,6 +19,8 @@ class BuoiHocHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var txvNhom: TextView = itemView.findViewById(R.id.txvNhom)
     var txvMH: TextView = itemView.findViewById(R.id.txvMH)
     var txvGV: TextView = itemView.findViewById(R.id.txvGV)
+    var imgView:ImageView = itemView.findViewById(R.id.img_background)
+    var root:ConstraintLayout = itemView.findViewById(R.id.rootNhomItem)
     fun bind(buoiHoc: BuoiHoc)
     {
         val string1 = DayOfWeekController.instances.getDayName(buoiHoc.maDay)

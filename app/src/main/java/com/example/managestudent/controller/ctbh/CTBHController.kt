@@ -12,7 +12,7 @@ import com.google.firebase.database.ValueEventListener
 class CTBHController
 {
     var list:MutableList<CTBH> = mutableListOf()
-    var listBHCode:MutableList<String> = mutableListOf()
+    var listMHCode:MutableList<String> = mutableListOf()
     var listSVCode:MutableList<String> = mutableListOf()
     var instanceFirebase = FirebaseDatabase.getInstance().getReference("CTBH")
     private lateinit var context: Context
@@ -35,8 +35,6 @@ class CTBHController
     }
     private fun initCTBH()
     {
-        Log.d("MAIN","Hihi" +instanceFirebase.toString())
-
         instanceFirebase.addValueEventListener(object : ValueEventListener
         {
             override fun onCancelled(p0: DatabaseError) {
@@ -44,7 +42,7 @@ class CTBHController
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                listBHCode.clear()
+                listMHCode.clear()
                 listSVCode.clear()
                 list.clear()
                 if(p0.exists())
@@ -55,7 +53,7 @@ class CTBHController
                         val value = data.getValue(CTBH::class.java)
                         if(value!=null)
                         {
-                            listBHCode.add(value.maBH)
+                            listMHCode.add(value.maMH)
                             listSVCode.add(value.maSV)
                             list.add(value)
                         }
@@ -65,8 +63,13 @@ class CTBHController
             }
         })
     }
+    fun getListCBTHBySVCode(sVCode:String): List<CTBH> {
+        return list.filter {
+            it.maSV==sVCode
+        }
+    }
     fun getPos(MaCTBH:String): Int {
-        return listBHCode.indexOf(MaCTBH)
+        return listMHCode.indexOf(MaCTBH)
     }
     fun getCTBH(index:Int): CTBH {
         return list[index]

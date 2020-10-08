@@ -1,5 +1,6 @@
 package com.example.managestudent.model
 
+import com.example.managestudent.controller.buoihoc.BuoiHocController
 import java.lang.Exception
 
 class BuoiHoc(var maNhom:String,var tietStart:String,var tietEnd:String,var maDay:String) {
@@ -12,4 +13,5 @@ class BuoiHoc(var maNhom:String,var tietStart:String,var tietEnd:String,var maDa
             false
         }
     }
+
 }

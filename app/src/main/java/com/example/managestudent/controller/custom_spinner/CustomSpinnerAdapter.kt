@@ -14,7 +14,6 @@ class CustomSpinnerAdapter(private val contextAc: Context, var mutableList: Muta
     ArrayAdapter<CustomSpinnerItem>(contextAc,R.layout.item_spinner1,mutableList)
 {
     private fun getCustomView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        Log.d("MAINN","hihi")
         var view = LayoutInflater.from(contextAc).inflate(R.layout.item_spinner1,parent,false)
         val value = mutableList.get(position)
         view.findViewById<TextView>(R.id.txvItem_spinner1).text = value.string1

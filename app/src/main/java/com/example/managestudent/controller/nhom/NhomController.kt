@@ -34,6 +34,11 @@ class NhomController {
             return instances
         }
     }
+    private fun getBuoiHoc(maSV:String,maNhom:String)
+    {
+
+    }
+
     private fun initNhom()
     {
         val firebase = getFirebaseInstance()

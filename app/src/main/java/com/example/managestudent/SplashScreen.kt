@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.managestudent.View.BuoiHocActivity
 import com.example.managestudent.View.DKiMonHocActivity
@@ -23,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase
 class SplashScreen : AppCompatActivity(), NhomInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         FirebaseDatabase.getInstance().setPersistenceEnabled(true)
         KhoaController.getInstance(this)
         BuoiHocController.getInstance(this)
