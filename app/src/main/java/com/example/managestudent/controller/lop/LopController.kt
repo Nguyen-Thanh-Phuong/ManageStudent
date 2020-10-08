@@ -1,6 +1,7 @@
 package com.example.managestudent.controller.lop
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import com.example.managestudent.controller.khoa.KhoaController
 import com.example.managestudent.model.Lop
@@ -49,6 +50,7 @@ class LopController {
                         val value = data.getValue(Lop::class.java)
                         if(value!=null)
                         {
+                            Log.d("MAINN",value.MaLop)
                             listLopCode.add(value.MaLop)
                             listLopName.add(value.TenLop)
                             list.add(value)

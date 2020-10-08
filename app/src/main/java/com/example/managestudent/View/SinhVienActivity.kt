@@ -55,6 +55,7 @@ class SinhVienActivity : AppCompatActivity(),SinhVienInterface {
         findViewById<Button>(R.id.btn).setOnClickListener {
             insert()
         }
+
     }
     private fun insert()
     {
@@ -74,6 +75,7 @@ class SinhVienActivity : AppCompatActivity(),SinhVienInterface {
 
         spinnerLop.setItems(instanceLop.listLopName)
         setAdapter(instanceSV.list)
+
     }
 
 
