@@ -31,7 +31,6 @@ class BuoiHocController {
             return instances
         }
     }
-
     private fun initBuoiHoc()
     {
         val firebase = getFirebaseInstance()

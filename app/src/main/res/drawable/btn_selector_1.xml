@@ -2,5 +2,5 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/btn_background_1" android:state_selected="true"></item>
     <item android:drawable="@drawable/btn_background_1" android:state_pressed="true"></item>
-    <item android:drawable="@drawable/btn_background_normal_1"/>
+    <item android:drawable="@drawable/btn_background_1"/>
 </selector>

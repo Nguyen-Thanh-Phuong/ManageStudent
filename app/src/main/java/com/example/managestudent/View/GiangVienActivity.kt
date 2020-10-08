@@ -12,6 +12,7 @@ import com.example.managestudent.controller.giaovien.GiaoVienAdapter
 import com.example.managestudent.controller.giaovien.GiaoVienController
 import com.example.managestudent.controller.giaovien.GiaoVienInterface
 import com.example.managestudent.model.GiaoVien
+import com.google.android.material.textfield.TextInputEditText
 import com.jaredrummler.materialspinner.MaterialSpinner
 
 class GiangVienActivity : AppCompatActivity(),GiaoVienInterface {
@@ -26,17 +27,21 @@ class GiangVienActivity : AppCompatActivity(),GiaoVienInterface {
         findViewById<Button>(R.id.btn).setOnClickListener {
             insert()
         }
+        setAdapter(instances.listGiaoVienName)
     }
 
     fun insert()
     {
-        val textView = findViewById<TextView>(R.id.edt_input)
+        val textView = findViewById<TextInputEditText>(R.id.edt_input)
         val nameGV = textView.text.toString()
         var GV = GiaoVien(nameGV)
         instances.insert(GV)
     }
     override fun getListGiaoVien(list: MutableList<String>) {
-        findViewById<MaterialSpinner>(R.id.customSpinner).setItems(list)
+        setAdapter(list)
+    }
+    private fun setAdapter(list: MutableList<String>)
+    {
         val adapter = GiaoVienAdapter(this,list)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()

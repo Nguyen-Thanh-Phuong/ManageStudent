@@ -11,15 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectNhomActivity"></activity>
-        <activity android:name=".View.DKiMonHocActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".View.BuoiHocActivity"></activity>
+        <activity android:name=".View.SinhVienActivity"></activity>
+        <activity android:name=".View.LopActivity" />
+        <activity android:name=".View.KhoaActivity" />
+        <activity android:name=".SelectNhomActivity" />
+        <activity android:name=".View.DKiMonHocActivity" />
+        <activity android:name=".View.BuoiHocActivity" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -29,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.CTBHActivity" />
         <activity android:name=".View.DayOfWeekActivity" />
         <activity android:name=".View.NhomActivity" />
         <activity android:name=".View.GiangVienActivity" />

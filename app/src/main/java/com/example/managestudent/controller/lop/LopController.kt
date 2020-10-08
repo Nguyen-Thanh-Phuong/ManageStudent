@@ -1,7 +1,6 @@
 package com.example.managestudent.controller.lop
 
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import com.example.managestudent.controller.khoa.KhoaController
 import com.example.managestudent.model.Lop
@@ -55,7 +54,7 @@ class LopController {
                             list.add(value)
                         }
                     }
-                    lopInterface?.getListLop(listLopName)
+                    lopInterface?.getListLop(list)
                 }
             }
         })
@@ -63,6 +62,7 @@ class LopController {
     fun getPos(maLop:String): Int {
         return listLopCode.indexOf(maLop)
     }
+    fun getLopName(code: String):String= listLopName[listLopCode.indexOf(code)]
     fun getLop(index:Int): Lop {
         return list[index]
     }

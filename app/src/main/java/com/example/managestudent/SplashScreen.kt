@@ -6,8 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.managestudent.View.BuoiHocActivity
-import com.example.managestudent.View.DKiMonHocActivity
+import com.example.managestudent.View.*
 import com.example.managestudent.controller.buoihoc.BuoiHocController
 import com.example.managestudent.controller.ctbh.CTBHController
 import com.example.managestudent.controller.day_of_week.DayOfWeekController
@@ -21,7 +20,7 @@ import com.example.managestudent.controller.sinhvien.SinhVienController
 import com.example.managestudent.model.Nhom
 import com.google.firebase.database.FirebaseDatabase
 
-class SplashScreen : AppCompatActivity(), NhomInterface {
+class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         FirebaseDatabase.getInstance().setPersistenceEnabled(true)
@@ -31,17 +30,14 @@ class SplashScreen : AppCompatActivity(), NhomInterface {
         SinhVienController.getInstance(this)
         MonHocController.getInstance(this)
         GiaoVienController.getInstance(this)
-        NhomController.getInstance(this,this)
+        NhomController.getInstance(this)
         DayOfWeekController.getInstance(this)
         CTBHController.getInstance(this)
         Handler(Looper.myLooper()!!).postDelayed({
-            val intent = Intent(this@SplashScreen,DKiMonHocActivity::class.java)
+            val intent = Intent(this@SplashScreen,SinhVienActivity::class.java)
             startActivity(intent)
             finish()
         },4000)
     }
 
-    override fun getListNhom(list: MutableList<Nhom>) {
-
-    }
 }

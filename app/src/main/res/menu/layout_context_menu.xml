@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nhom_select"
+        android:title="Nhóm Đã Chọn" />
+    <item
+        android:id="@+id/nhom_non_select"
+        android:title="Nhóm Chưa Chọn" />
+</menu>

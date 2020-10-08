@@ -11,8 +11,8 @@ class KhoaController {
     var context: Context? =null
     var khoaInterface: KhoaInterface?=null
     val khoaList = mutableListOf<Khoa>()
-    private var khoaCode = mutableListOf<String>()
-    private var khoaName = mutableListOf<String>()
+    var khoaCode = mutableListOf<String>()
+    var khoaName = mutableListOf<String>()
     var instanceFirebase = FirebaseDatabase.getInstance().getReference("Khoa")
     private constructor(){getAllKhoa()}
     companion object
@@ -54,7 +54,7 @@ class KhoaController {
                             khoaName.add(khoa.tenKhoa)
                         }
                     }
-                    khoaInterface?.getListKhoa(khoaList)
+                    khoaInterface?.getListKhoa(khoaName)
                 }
 
             }
@@ -119,14 +119,9 @@ class KhoaController {
     fun getKhoaName(maKhoa: String): String {
         return khoaName[khoaCode.indexOf(maKhoa)]
     }
-    fun getKhoaByIndex(index:Int):Khoa?
+    fun getKhoaCodeByIndex(index:Int):String
     {
-        try {
-            return khoaList[index]
-        }catch (e:Exception)
-        {
-            return null
-        }
+        return khoaCode[index]
     }
     fun insert(khoa: Khoa)
     {
