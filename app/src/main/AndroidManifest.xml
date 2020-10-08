@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.managestudent">
 
+    <uses-permission android:name="android.permission.INTERNET " />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".menu.MenuActivity">
-
-        </activity>
         <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SelectNhomActivity"></activity>
+        <activity android:name=".View.DKiMonHocActivity">
+        </activity>
+        <activity android:name=".View.BuoiHocActivity"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".View.CTBHActivity" />
+        <activity android:name=".View.DayOfWeekActivity" />
+        <activity android:name=".View.NhomActivity" />
+        <activity android:name=".View.GiangVienActivity" />
+        <activity android:name=".View.InputMonHoc" />
+        <activity android:name=".menu.CalendarActivity" />
+        <activity android:name=".menu.MenuActivity" />
     </application>
 
 </manifest>

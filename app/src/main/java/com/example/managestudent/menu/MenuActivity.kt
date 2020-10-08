@@ -1,5 +1,6 @@
 package com.example.managestudent.menu
 
+import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,13 +18,16 @@ import jp.wasabeef.recyclerview.animators.ScaleInAnimator
 import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator
 import kotlinx.android.synthetic.main.activity_menu.*
 import www.sanju.zoomrecyclerlayout.ZoomRecyclerLayout
-
 class MenuActivity : AppCompatActivity(), adapterphone.ListItemClickListener {
     var phoneRecycler: RecyclerView? = null
     var adapter: RecyclerView.Adapter<*>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+        rela_Calendar.setOnClickListener {
+            val intent = Intent(this,CalendarActivity::class.java)
+            startActivity(intent)
+        }
         //Hooks
         phoneRecycler = findViewById(R.id.my_recycler)
         phoneRecycler()

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
@@ -39,6 +40,20 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.0'
+
+    //import Material
+    implementation 'com.google.android.material:material:1.0.0'
+    //Firebase
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
+
+    //Circle Image View
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    //spinner
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+
     implementation project(':zoomrecyclerlayout')
     //navigation drawer
     implementation 'com.google.android.material:material:1.0.0'
@@ -48,3 +63,4 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
 }
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <include android:id="@+id/icl1" layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:id="@+id/planBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icl1"
+        android:padding="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-1dp"
+            android:fontFamily="@font/playfair_display"
+            android:padding="5dp"
+            android:text="Plan"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/more"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/planBtn"
+        />
+
+    <LinearLayout
+        android:id="@+id/weekLinear"
+        android:layout_above="@id/infoWeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <include android:id="@+id/btnBack_SLNHOM" layout="@layout/custom_btn_insert"/>
+        <include android:id="@+id/btnOk_SLNHOM" layout="@layout/custom_btn_insert"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/infoWeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="65% Collection"
+            android:textSize="15dp"
+            android:fontFamily="@font/playfair_display"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="3 Day"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

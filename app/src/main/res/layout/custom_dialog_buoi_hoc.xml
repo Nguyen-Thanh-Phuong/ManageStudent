@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_alignParentTop="true"
+        android:id="@+id/txvDisplayBH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroke_dropdown"
+        android:textSize="20sp"
+        android:text="Select Mon Hoc :"
+        android:fontFamily="@font/playfair_display"
+        android:textStyle="bold"
+        android:padding="10dp"/>
+    <include
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txvDisplayBH"
+        layout="@layout/monhoc_recycle"/>
+</RelativeLayout>
