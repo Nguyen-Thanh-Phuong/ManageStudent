@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity android:name=".SelectNhomActivity"></activity>
         <activity android:name=".View.DKiMonHocActivity">
         </activity>
@@ -20,6 +22,8 @@
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
+        </activity>
+        <activity android:name=".account.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

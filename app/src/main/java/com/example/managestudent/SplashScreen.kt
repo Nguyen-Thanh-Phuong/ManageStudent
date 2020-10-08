@@ -18,6 +18,7 @@ import com.example.managestudent.controller.monhoc.MonHocController
 import com.example.managestudent.controller.nhom.NhomController
 import com.example.managestudent.controller.nhom.NhomInterface
 import com.example.managestudent.controller.sinhvien.SinhVienController
+import com.example.managestudent.menu.MenuActivity
 import com.example.managestudent.model.Nhom
 import com.google.firebase.database.FirebaseDatabase
 
@@ -35,7 +36,7 @@ class SplashScreen : AppCompatActivity(), NhomInterface {
         DayOfWeekController.getInstance(this)
         CTBHController.getInstance(this)
         Handler(Looper.myLooper()!!).postDelayed({
-            val intent = Intent(this@SplashScreen,DKiMonHocActivity::class.java)
+            val intent = Intent(this@SplashScreen,MenuActivity::class.java)
             startActivity(intent)
             finish()
         },4000)

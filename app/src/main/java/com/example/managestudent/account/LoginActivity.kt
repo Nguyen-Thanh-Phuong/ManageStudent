@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.example.managestudent.MainActivity
 import com.example.managestudent.R
 import com.example.managestudent.controller.account.AccountController
 import com.example.managestudent.menu.MenuActivity
@@ -20,11 +21,10 @@ class LoginActivity : AppCompatActivity() {
         btnSignUp_loginForm.setOnClickListener(::onClickSignUp)
         btnLogin_convertForm.setOnClickListener(::onClickLogin_Convert)
         btnSubmit.setOnClickListener(::onClickSubmitForm)
-
     }
     private fun login()
     {
-        val intent = Intent(this,MenuActivity::class.java)
+        val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
     private  fun register()
