@@ -22,15 +22,17 @@
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
-        </activity>
-        <activity android:name=".account.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.CTBHActivity" />
+        <activity android:name=".account.LoginActivity">
+        </activity>
+        <activity android:name=".View.SinhVienActivity"></activity>
+        <activity android:name=".View.LopActivity" />
+        <activity android:name=".View.KhoaActivity" />
         <activity android:name=".View.DayOfWeekActivity" />
         <activity android:name=".View.NhomActivity" />
         <activity android:name=".View.GiangVienActivity" />
