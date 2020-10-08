@@ -30,11 +30,18 @@ class InputMonHoc : AppCompatActivity(), MonHocInterface {
     }
 
     override fun getListMonHoc(list: MutableList<String>) {
-
+        setAdapter(list)
+    }
+    private fun setAdapter(list: MutableList<String>)
+    {
         recycle.adapter = MonHocAdapter(this,list)
         (recycle.adapter as MonHocAdapter).notifyDataSetChanged()
     }
 
+    override fun onResume() {
+        super.onResume()
+        setAdapter(instances.listMonHocName)
+    }
     override fun getPosition(index: Int) {
     }
 

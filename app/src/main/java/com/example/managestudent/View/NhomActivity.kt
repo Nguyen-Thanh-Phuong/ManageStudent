@@ -51,6 +51,14 @@ class NhomActivity : AppCompatActivity(), MonHocInterface, GiaoVienInterface, Nh
             insert()
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        spinnerMH.setItems(instancesMH.listMonHocName)
+        spinnerGV.setItems(instancesGV.listGiaoVienName)
+        setAdapter(instanceNhom.list)
+    }
     private fun insert()
     {
         val groupName = edtGroupName.text.toString()
@@ -72,8 +80,15 @@ class NhomActivity : AppCompatActivity(), MonHocInterface, GiaoVienInterface, Nh
     }
 
     override fun getListNhom(list: MutableList<Nhom>) {
+        setAdapter(list)
+    }
+    private fun setAdapter(list: MutableList<Nhom>)
+    {
         val adapter = NhomAdapter(this,list)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
+    }
+
+    override fun getCodeSelect(NhomCode: String) {
     }
 }

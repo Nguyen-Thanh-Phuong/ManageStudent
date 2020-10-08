@@ -2,21 +2,24 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
      android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp">
+    android:layout_margin="5dp">
     <LinearLayout
         android:id="@+id/monhocItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/btn_selector_1"
-        android:focusable="true">
+        android:focusable="true"
+        >
         <TextView
             android:id="@+id/monhocTxv"
+            android:textStyle="bold"
+            android:fontFamily="@font/playfair_display"
             android:drawableLeft="@drawable/ic_lens"
             android:drawablePadding="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:text="Text Text"/>
     </LinearLayout>
 

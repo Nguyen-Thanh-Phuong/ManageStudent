@@ -77,6 +77,13 @@ class CTBHController
 
     fun insert(CTBH: CTBH)
     {
+        if(list.find {
+                it.maMH==CTBH.maMH&&it.maSV==CTBH.maSV
+            }!=null)
+        {
+            Toast.makeText(context,"Error : Data is Already ",Toast.LENGTH_SHORT).show()
+            return
+        }
         val firebase = instanceFirebase
         val key = firebase.push().key
         if(key!=null)

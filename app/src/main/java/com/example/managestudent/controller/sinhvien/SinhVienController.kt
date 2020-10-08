@@ -72,7 +72,7 @@ class SinhVienController {
                         }
                     }
                 }
-                sinhVienInterface?.getListSV(listName)
+                sinhVienInterface?.getListSV(list)
             }
         })
     }

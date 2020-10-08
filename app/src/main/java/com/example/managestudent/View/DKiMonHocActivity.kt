@@ -26,7 +26,7 @@ class DKiMonHocActivity : AppCompatActivity() {
     private var list_btn:MutableList<Button> = mutableListOf()
     private var list_btn_Tiet:MutableList<Button> = mutableListOf()
     private var pressBtn:Button?=null
-    lateinit var list_TietHoc_OnDay_Not_Select:List<BuoiHoc>
+    lateinit var list_TietHoc_OnDay_Select:List<BuoiHoc>
     lateinit var list_TietHoc_OnDay:List<BuoiHoc>
     lateinit var list_CTBH:List<CTBH>
     private var instanceBH = BuoiHocController.instances
@@ -56,16 +56,20 @@ class DKiMonHocActivity : AppCompatActivity() {
 
     private fun setData(button: Button)
     {
+        list_btn_Tiet.forEach {
+            it.setBackgroundResource(R.drawable.textview_draw)
+        }
+        val instanceBuoiHoc= BuoiHocController.instances
         val dayCode = DayOfWeekController.instances.getDayCode(list_btn.indexOf(button))
-        list_TietHoc_OnDay = BuoiHocController.instances.getListQueryAddBuoiHocByDay(dayCode)
-        list_TietHoc_OnDay_Not_Select = list_TietHoc_OnDay.filter {itBH->
+        list_TietHoc_OnDay = instanceBuoiHoc.getListQueryAddBuoiHocByDay(dayCode)
+        list_TietHoc_OnDay_Select = list_TietHoc_OnDay.filter {itBH->
                 list_CTBH.find {
                     it.maMH == itBH.maNhom
-                }==null
+                }!=null
         }
-        list_TietHoc_OnDay_Not_Select.forEach {
-            Log.d("MAINN","${NhomController.instances.getNhomToString(it.maNhom)} -- ${it.tietStart} --${it.tietEnd} -Tiet State: " +
-                    "${instanceBH.checkIndexTimeTiet(it)}")
+        list_TietHoc_OnDay_Select.forEach {
+            val index =instanceBuoiHoc.checkIndexTimeTiet(it)
+            list_btn_Tiet[index].setBackgroundResource(R.drawable.gradien_item)
         }
     }
 
@@ -78,7 +82,7 @@ class DKiMonHocActivity : AppCompatActivity() {
         list_btn_Tiet.add(findViewById(R.id.lesson_other))
         list_btn_Tiet.forEach { itTiet->
             itTiet.setOnClickListener {
-                startLoadingDialog(list_TietHoc_OnDay_Not_Select.filter {
+                startLoadingDialog(list_TietHoc_OnDay_Select.filter {
                     instanceBH.checkIndexTimeTiet(it)==list_btn_Tiet.indexOf(itTiet)
                 } as MutableList<BuoiHoc>)
             }
@@ -107,7 +111,7 @@ class DKiMonHocActivity : AppCompatActivity() {
             setData(it as Button)
         }
     }
-    fun startLoadingDialog(listBH:MutableList<BuoiHoc>)
+    private fun startLoadingDialog(listBH:MutableList<BuoiHoc>)
     {
         NhomResultCode = ""
         var builder: AlertDialog.Builder = AlertDialog.Builder(this);
@@ -122,16 +126,6 @@ class DKiMonHocActivity : AppCompatActivity() {
         recycle.layoutManager = LinearLayoutManager(this)
 
         builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
-
-        })
-        builder.setPositiveButton("Insert", DialogInterface.OnClickListener { dialogInterface, i ->
-            NhomResultCode = textView.hint.toString()
-            if(NhomResultCode.isEmpty())
-                Toast.makeText(this,"Please Select Nhom Hoc",Toast.LENGTH_SHORT).show()
-            else
-            {
-                CTBHController.instances.insert(CTBH(sv.maSV, NhomResultCode!!))
-            }
 
         })
         builder.setView(view)

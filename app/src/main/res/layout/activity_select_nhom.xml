@@ -15,6 +15,7 @@
         android:padding="10dp"
         >
         <TextView
+            android:id="@+id/txvPlan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-1dp"
@@ -23,19 +24,20 @@
             android:text="Plan"
             android:textSize="20dp"
             android:textStyle="bold" />
-        <ImageView
+        <Button
+            android:id="@+id/more"
             android:layout_marginTop="10dp"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/more"
+            android:background="@drawable/more"
             android:layout_alignParentRight="true"
             />
     </RelativeLayout>
-    <androidx.recyclerview.widget.RecyclerView
+    <include
+        android:layout_below="@id/planBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/planBtn"
-        />
+        layout="@layout/monhoc_recycle"/>
 
     <LinearLayout
         android:id="@+id/weekLinear"
@@ -45,7 +47,6 @@
         android:orientation="horizontal"
         android:gravity="center">
         <include android:id="@+id/btnBack_SLNHOM" layout="@layout/custom_btn_insert"/>
-        <include android:id="@+id/btnOk_SLNHOM" layout="@layout/custom_btn_insert"/>
     </LinearLayout>
 
     <RelativeLayout
