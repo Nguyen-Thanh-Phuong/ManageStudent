@@ -53,7 +53,6 @@ class BuoiHocActivity : AppCompatActivity(), BuoiHocInterface {
             insert()
         }
         spinnerNhom.setItems(instanceNhom.getListName())
-
         spinnerDay.setItems(instanceDay.getListDay())
     }
     private fun insert()

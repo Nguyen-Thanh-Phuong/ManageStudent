@@ -21,7 +21,9 @@
             android:padding="20dp"
             android:gravity="center"
             >
-            <include layout="@layout/custom_edit_text"/>
+            <include android:id="@+id/txvGVName_GV" layout="@layout/custom_edit_text"/>
+            <include android:id="@+id/txvGVUser_GV" layout="@layout/custom_edit_text"/>
+            <include android:id="@+id/txvGVPass_GV" layout="@layout/custom_edit_text"/>
             <include layout="@layout/custom_btn_insert"/>
             <include layout="@layout/monhoc_recycle"/>
         </LinearLayout>

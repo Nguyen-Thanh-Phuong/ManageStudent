@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.SinhVienActivity"></activity>
+        <activity android:name=".menu.MenuActivitySV"></activity>
+        <activity android:name=".menu.MenuAddActivityGV" />
+        <activity android:name=".menu.MenuActivityGV" />
+        <activity android:name=".View.SinhVienActivity" />
         <activity android:name=".View.LopActivity" />
         <activity android:name=".View.KhoaActivity" />
         <activity android:name=".SelectNhomActivity" />

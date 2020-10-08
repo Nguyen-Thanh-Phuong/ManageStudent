@@ -23,6 +23,8 @@
             >
             <include android:id="@+id/txvNameSV_SV" layout="@layout/custom_edit_text"/>
             <include android:id="@+id/txvNamSinh_SV" layout="@layout/custom_edit_text"/>
+            <include android:id="@+id/txvUser_SV" layout="@layout/custom_edit_text"/>
+            <include android:id="@+id/txvPass_SV" layout="@layout/custom_edit_text"/>
             <include layout="@layout/custom_spinner"/>
             <include layout="@layout/custom_btn_insert"/>
             <include layout="@layout/monhoc_recycle"/>

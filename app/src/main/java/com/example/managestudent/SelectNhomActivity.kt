@@ -33,7 +33,7 @@ class SelectNhomActivity : AppCompatActivity(),NhomInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_nhom)
-        sv = SinhVien("-MIro-WbytXKw_1Rfv3e","Nguyễn Thanh Phuong","2000","-MIqUCQhjMqJdl-725BM")
+        sv = SinhVien("-MIro-WbytXKw_1Rfv3e","Nguyễn Thanh Phuong","2000","-MIqUCQhjMqJdl-725BM","user","user","")
 
         textView= findViewById(R.id.txvPlan)
         btnMore = findViewById(R.id.more)

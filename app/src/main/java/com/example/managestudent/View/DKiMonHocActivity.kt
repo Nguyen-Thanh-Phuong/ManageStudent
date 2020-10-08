@@ -38,7 +38,7 @@ class DKiMonHocActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_d_ki_mon_hoc)
-        sv = SinhVien("-MIro-WbytXKw_1Rfv3e","Nguyễn Thanh Phuong","2000","-MIqUCQhjMqJdl-725BM")
+        sv = SinhVien("-MIro-WbytXKw_1Rfv3e","Nguyễn Thanh Phuong","2000","-MIqUCQhjMqJdl-725BM","user","user","")
         getCTBHQuerySV()
         setClickDrawable()
 
